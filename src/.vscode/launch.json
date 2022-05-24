@@ -1,0 +1,58 @@
+{
+    "configurations": [
+        {
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "request": "attach",
+            "type": "chrome",
+            "webRoot": "${workspaceFolder}"
+        },
+        
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "Invoke Lambda",
+            "invokeTarget": {
+                "target": "code",
+                "lambdaHandler": "Function Handler",
+                "projectRoot": "${workspaceFolder}"
+            },
+            "lambda": {
+                "runtime": "Lambda Runtime",
+                "payload": {
+                    "json": {}
+                }
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "upload-prices-dynamodb:lambda.lambda_handler (python3.7)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/lambda/upload-prices-dynamodb",
+                "lambdaHandler": "lambda.lambda_handler"
+            },
+            "lambda": {
+                "runtime": "python3.7",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "upload-prices-dynamodb:lambda.lambda_handler (python3.7)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/lambda/upload-prices-dynamodb",
+                "lambdaHandler": "lambda.lambda_handler"
+            },
+            "lambda": {
+                "runtime": "python3.7",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        }
+    ]
+}
