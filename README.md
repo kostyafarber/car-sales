@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/kostyafarber/car-sales">
+  <a href="https://kostyafarber.github.io"/>
     <img src="images/puzzle.png" alt="Logo" width="40" height="40">
   </a>
 
